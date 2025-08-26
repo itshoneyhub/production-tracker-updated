@@ -1,0 +1,40 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
+
+    steps:
+    - name: Checkout 
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0 # Ensure a full clone for gh-pages
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20' # Use a stable Node.js version
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Build
+      run: |
+          echo "VITE_APP_BACKEND_URL=${{ secrets.VITE_APP_BACKEND_URL }}" > .env
+          npm run build
+
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./dist
+        cname: itshoneyhub.github.io

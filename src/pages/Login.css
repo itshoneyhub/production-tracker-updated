@@ -1,0 +1,116 @@
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Full viewport height */
+  background-color: #f0f2f5; /* Light background for the whole page */
+  padding: 20px;
+  box-sizing: border-box; /* Include padding in element's total width and height */
+}
+
+.login-container {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Softer shadow */
+  text-align: center;
+  width: 100%;
+  max-width: 400px; /* Max width for the form */
+  box-sizing: border-box;
+}
+
+.login-title {
+  font-size: 2.2em;
+  color: #333;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.login-subtitle {
+  font-size: 1em;
+  color: #777;
+  margin-bottom: 30px;
+}
+
+.login-form .form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.login-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #555;
+  font-size: 0.95em;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1em;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-form input[type="text"]:focus,
+.login-form input[type="password"]:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+.login-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 10px;
+}
+
+.login-button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px); /* Slight lift effect */
+}
+
+.error-message {
+  color: #dc3545;
+  font-size: 0.9em;
+  margin-top: -10px;
+  margin-bottom: 15px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .login-container {
+    padding: 30px;
+    margin: 0 15px; /* Add some margin on very small screens */
+  }
+
+  .login-title {
+    font-size: 1.8em;
+  }
+
+  .login-subtitle {
+    font-size: 0.9em;
+  }
+
+  .login-form input {
+    padding: 10px 12px;
+    font-size: 0.9em;
+  }
+
+  .login-button {
+    padding: 10px;
+    font-size: 1em;
+  }
+}

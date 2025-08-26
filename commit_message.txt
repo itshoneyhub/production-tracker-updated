@@ -1,0 +1,4 @@
+feat: Update backend configuration and API routing
+
+- Added AZURE_SQL_PORT to backend/.env.
+- Refactored API routing in backend/server.js to support Azure Functions integration.

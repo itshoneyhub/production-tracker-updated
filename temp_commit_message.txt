@@ -1,0 +1,3 @@
+fix: Update PostgreSQL environment variable names
+
+- Changed DB_SERVER to DB_HOST and DB_DATABASE to DB_NAME in .env and db.js.

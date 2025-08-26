@@ -1,0 +1,54 @@
+.alert-message {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 12px 20px; /* Adjusted padding */
+  border-radius: 6px; /* Slightly smaller border-radius */
+  font-weight: 500; /* Slightly less bold */
+  color: #fff;
+  z-index: 9999;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); /* Softer shadow */
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out, transform 0.3s ease-out; /* Added transform transition */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle border */
+}
+
+.alert-message.fade-in {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0); /* Slide in effect */
+}
+
+.alert-message.fade-out {
+  opacity: 0;
+  transform: translateX(-50%) translateY(-20px); /* Slide out effect */
+}
+
+.alert-message.success {
+  background-color: #4CAF50; /* Green for success */
+}
+
+.alert-message.error {
+  background-color: #F44336; /* Red for error */
+}
+
+.alert-message.info {
+  background-color: #2196F3; /* Blue for info */
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .alert-message {
+    width: calc(100% - 40px); /* Take full width minus padding */
+    left: 20px;
+    transform: translateX(0); /* Remove center transform */
+    text-align: center;
+    font-size: 0.9rem; /* Smaller font on small screens */
+  }
+  .alert-message.fade-in {
+    transform: translateX(0) translateY(0);
+  }
+  .alert-message.fade-out {
+    transform: translateX(0) translateY(-20px);
+  }
+}
